@@ -473,7 +473,7 @@ app = (function() {
 
     fillForm: function fillForm() {
       this.$('#email-input').val('gareth.murphy@feedhenry.com');
-      this.$('#password-input').val('feedhenrysf1234cEgHbT9mKBU0rGtBwqGH1eaP');
+      this.$('#password-input').val('feedhenrysf1234EmyJMIBVSypX6CPXuZkpMfFrL');
       this.$('.clear-input').css('display', 'block');
     },
 
