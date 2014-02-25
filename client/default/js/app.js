@@ -588,7 +588,7 @@ app = (function() {
 
     fillForm: function fillForm() {
       this.$('#email-input').val('gareth.murphy@feedhenry.com');
-      this.$('#password-input').val('salesforce123lsjLcklI45Vcjm0DQ114M4y2');
+      this.$('#password-input').val('feedhenrysf1234EmyJMIBVSypX6CPXuZkpMfFrL');
       this.$('.clear-input').css('display', 'block');
     },
 
