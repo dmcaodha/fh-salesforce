@@ -6,6 +6,7 @@
 
   <meta name="viewport"
         content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no">
+  <meta name="format-detection" content="telephone=no" />
 
   <!-- SymbolSet webfont icons stylesheets. -->
   <link rel="stylesheet" href="css/ss-standard.css">
@@ -31,9 +32,8 @@
       <!-- Wrapper to animate in all elements. -->
       <div id="login-content">
 
-        <img src="res/img/logo.png" style="
-    width: 66%;
-    margin: 0 auto;
+        <img src="res/img/sf_logo.png" style="
+    width: 70%;
     display: block;
     margin-bottom: 2rem;
     position: absolute;
@@ -74,23 +74,91 @@
       <span class="<%= Rating %>"><%- Name %><br/><span class="account-no"><%= AccountNumber %></span></span>
   </script>
 
-  <script type="text/template" id="account-item-tpl">
-      <section>
+  <script type="text/template" id="account-tpl">
+    <div>
+      <section class="account-head">
+        <div class="overlay">
           <h1><%- Name %></h1>
-          <h2><%= AccountNumber %></h2>
-
-          <% if (Rating) { %>
-          <div class="heat <%= Rating %>"><%= Rating %></div>
-          <% } %>
-
+          <span class="ss-tag"><%= AccountNumber %></span>
           <% if (Industry) { %>
-          <div class="industry"><%- Industry %></div>
-          <% } %>
-
-          <% if (Type) { %>
-          <div class="type"><%- Type %></div>
-          <% } %>
+            <span class="ss-briefcase"><%- Industry %></span>
+          <% }%>
+        </div>
       </section>
+      <section class="contact-details">
+        <div>
+          <% if (BillingStreet) print(BillingStreet + ',<br/>') %>
+          <% if (BillingCity) print(BillingCity + ',<br/>') %>
+          <% if (BillingState) print(BillingState + ',<br/>') %>
+          <% if (BillingCountry) print(BillingCountry) %>
+        </div>
+      </section>
+      <section class="links">
+        <div>
+          <% if (Phone) print('<a href="tel:' + Phone + '" class="ss-phone">' + Phone + '</a>') %>
+
+          <br/>
+          <% if (Website) print('<a href="' + Website + '" target="_blank" rel="external" class="ss-globe">' + Website + '</a>') %>
+        </div>
+      </section>
+      <section class="raw">
+
+      </section>
+      </div>
   </script>
+
+  <script type="text/template" id="opportunity-tpl">
+    <div>
+      <section class="top">
+        <section class="head">
+          <h3>Amount</h3>
+          <div class="figure">&euro;<%= Amount %></div>
+
+          <h3>Expected Revenue</h3>
+          <div class="figure">&euro;<%= ExpectedRevenue %></div>
+
+          <div id="probability-bar">
+            <div id="probability-figure"></div>
+          </div>
+        </section>
+        <section class="info">
+          <h1><%- Name %></h1>
+          <span class="ss-user"><%- AccountId %></span>
+        </section>
+      </section>
+      <% if (Description) { %>
+        <section class="description">
+          <p><%- Description %></p>
+        </section>
+      <% } %>
+      <section class="raw">
+
+      </section>
+    </div>
+  </script>
+
+  <script type="text/template" id="cases-tpl">
+    <div>
+
+      <section class="raw">
+
+      </section>
+    </div>
+  </script>
+
+  <script type="text/template" id="campaign-tpl">
+    <div>
+
+      <section class="raw">
+
+      </section>
+    </div>
+  </script>
+
+<script type="text/template" id="campaign-tpl">
+  <div>
+    <section></section>
+  </div>
+</script>
 </body>
 </html>
